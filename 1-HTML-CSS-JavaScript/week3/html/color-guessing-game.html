@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Guessing Game</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        header {
+            text-align: center;
+            background-color: black;
+            color: white;
+            padding: 10px;
+        }
+
+        .scoreboard {
+            text-align: center;
+            background-color: rgb(68, 77, 212);
+            color: white;
+            padding: 10px;
+        }
+
+        h2 {
+            font-size: 40px;
+            text-shadow: black 2px 5px;
+            margin: 10px;
+        }
+
+        .btn {
+            text-align: center;
+            padding: 10px;
+            background-color: black;
+            color: white;
+            font-weight: bolder;
+        }
+
+        button {
+            padding: 10px 25px;
+            background-color: rgb(185, 14, 14);
+            color: white;
+            border-radius: 30% 30% 50% 50%;
+            border: 5px solid rgb(22, 22, 22);
+        }
+
+        ul {
+            padding: 5px;
+            list-style-type: none;
+            text-align: left;
+            line-height: 40px;
+            display: inline-block;
+        }
+
+        .list {
+            font-size: 18px;
+            color: black;
+            font-weight: bolder;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Color Guessing Game</h1>
+        <div>
+            <p>Try your luck at the Color Guessing Game!</p>
+            <p>Can you guess the Machine's color in 5 guesses or less?</p>
+        </div>
+    </header>
+    <div class="scoreboard">
+        <h2>Scoreboard</h2>
+        <ul class="list">
+            <li>1 Guess - Wow! Quite the Lucky Guesser!!</li>
+            <li>2-3 Guesses - You are one Smart Cookie!</li>
+            <li>4-5 Guesses - You are an Average Guesser.</li>
+            <li>5-8 Guesses - Don't worry, you'll improve!</li>
+            <li>9-10 Guesses - Pay attention to the hints.</li>
+            <li>10+ Guesses - Better luck next time!</li>
+        </ul>
+    </div>
+    <div class="btn">
+        <button type="button" onclick="runGame()">Start Game</button>
+        <p>2 Credits to PLAY</p>
+    </div>
+    <script>
+        
+        const COLORS_ARRAY = ["white", "yellow", "gold", "green", "gray", "red", "orange", "magenta", "blue", "cyan"];
+        COLORS_ARRAY.sort().join(", "); // sorts the array and separates elements
+
+
+        function runGame() {
+            let guess = "";
+            let correct = false;
+            let numTries = 0;
+
+            const targetIndex = Math.floor(Math.random() * 10); // calculates a rounded random number from 0 to 9
+            const target = COLORS_ARRAY[targetIndex]; // pulls the random number and coverts in into an element within the array
+            console.log(target); // Used to test the game generating random colors
+
+            do {
+
+                guess = prompt("I am thinking of one of these colors:\n\n" + COLORS_ARRAY + "\n\nWhat color am I thinking of?\n").toLowerCase(); // gets user input to guess a color
+
+                if (guess === null) { // allows cancel button to work
+                    return;
+                }
+
+                numTries++;
+                correct = checkGuess(guess, target);
+
+            } while (!correct); // continues to run until the guess is correct
+
+            alert("Congratulations!\n\nYou guessed " + target + " correctly!\n\n...It only took you " + numTries + " tries."); // guess is correct and congratulates the player
+            document.body.style.background = guess; // changes the background color to the random color
+        }
+
+        function checkGuess(guess, target) {
+            let correct = false;
+
+            if (!COLORS_ARRAY.includes(guess)) { // checks if the color is found within the array
+                alert("You did not enter a color that is listed.\n\n Please enter a color that is listed.");
+            } else if (guess > target) { // tells player guess is higher than target
+                alert("Your guess is incorrect.\n\nHint: your guess is higher than the target.");
+            } else if (guess < target) { // tells player guess is lower than target
+                alert("Your guess is incorrect.\n\nHint: your guess is lower than the target.");
+            } else { // guess is correct
+                correct = true;
+            }
+            return correct;
+        }
+
+    </script>
+</body>
+</html>

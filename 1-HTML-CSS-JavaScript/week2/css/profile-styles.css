@@ -1,0 +1,166 @@
+* {
+    margin: 0 auto;
+}
+
+body {
+    font-family: "Open Sans";
+}
+
+table {
+    border-collapse: collapse;
+}
+
+nav {
+    background-color: rgb(192, 192, 196);
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 15px;
+    font-size: 20px;
+}
+
+li {
+    display: inline-block;
+    column-width: 200px;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a:hover, a:visited, a {
+    color: black;
+}
+
+img {
+    width: 350px;
+}
+
+.intro-table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border-collapse: collapse;
+    height: 500px;
+    color: white;
+}
+
+span {
+    color: aqua;
+    text-shadow: 2px 2px rgb(62, 134, 134);
+}
+
+.intro-photo {
+    background-image: url(../images/Selfie.jpeg);
+    background-size: 100% 100%;
+    background-position: center;
+    width: 60%;
+}
+
+.intro {
+    text-align: center;
+}
+
+.intro-me {
+    background-color: rgb(66, 66, 63);
+}
+
+td {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.aboutMe-container {
+    display: flex;
+    justify-content: center;
+}
+
+.aboutMe-table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 400px;
+    font-size: 20px;
+}
+
+.aboutMe-head {
+    padding: 10px;
+    background-color: rgb(117, 117, 133);
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+
+.aboutMe-img {
+   background-image: url(../images/wifeAndI.jpg);
+   background-size: 100% 100%;
+   background-position: center;
+   width: 30%;
+}
+
+.aboutMe-text {
+    background-color: rgb(117, 117, 133);
+    line-height: 2.5em;
+}
+
+.hobbies {
+    margin: 0 auto;
+    text-align: left;
+}
+
+.hobbies-table {
+    height: 300px;
+    width: 100%;
+    font-size: 20px;
+    color: white;
+}
+
+.hobbies-head {
+    background-color: rgb(66, 66, 63);
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+}
+
+.hobbies-text {
+    font-size: 20px;
+    line-height: 2.5em;
+    background-color: rgb(66, 66, 63);
+}
+
+.hobbies-img {
+    background-image: url(../images/multiversus.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    width: 25%;
+}
+
+.hobbies-image {
+    background-image: url(../images/rocketLeague.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    width: 25%;
+}
+
+.contactMe {
+    margin: 0 auto;
+    padding: 5px;
+    background-color: rgb(192, 192, 196);
+    text-align: center;
+    line-height: 2.5em;
+}
+
+button {
+    background-color: rgb(66, 66, 63);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 25px;
+    border: 3px solid rgb(150, 150, 158);
+    border-radius: 30px;
+}
+

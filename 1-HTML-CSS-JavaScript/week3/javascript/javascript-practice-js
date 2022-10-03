@@ -1,0 +1,16 @@
+let age = prompt('How old are you?');
+
+if (age < 12) {
+    let ticketPrice = 10;
+} else if (age > 65) {
+    let ticketPrice = 10;
+} else {
+    let ticketPrice = 20;
+}
+
+
+if ((age > 12) && (age < 65)) {
+    ticketPrice = 20;
+} else {
+    ticketPrice = 10;
+}

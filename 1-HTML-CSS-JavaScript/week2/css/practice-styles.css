@@ -1,0 +1,70 @@
+* {
+    text-align: center;
+}
+
+html {
+    background-image: url(../images/cafeMenu.jpg);
+    color: white;
+}
+
+body {
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+h1 {
+    color: white;
+    font: 32px Garamond, Helvetica, serif;
+    border-bottom: black dotted 3px;
+}
+
+table {
+    width: 40%;
+    border: black solid 2px;
+    background-color: rgb(83, 58, 25);
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    font-family:'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-size: large;
+}
+
+thead {
+    text-align: left;
+}
+
+td {
+    border: black solid 1px;
+    text-align: left;
+}
+
+label {
+    display: block;
+}
+
+#submit-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+
+#recommendations {
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background-color: burlywood;
+    border: black dashed 2px;
+}
+
+.review {
+    text-align: center;
+}
+
+.contact-info {
+    margin: 10px 100px auto;
+    padding: 100px;
+    text-align: center;
+    border: black dotted 2px;
+}

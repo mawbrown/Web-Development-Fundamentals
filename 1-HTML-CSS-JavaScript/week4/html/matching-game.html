@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Game</title>
+    <style>
+        body {
+            background-image: linear-gradient(to top, rgb(56, 53, 51) 50%, rgb(196, 196, 66) 50%);
+        }
+        
+        h1 {
+            text-align: center;
+            width: 1000px;
+        }
+
+        p {
+            text-align: center;
+            width: 1000px;
+            color: white;
+            font-size: 24px;
+        }
+
+        #scoreSystem {
+            text-align: center;
+        }
+
+        img {
+            position: absolute;
+        }
+
+        div {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+        }
+
+        #rightSide {
+            left: 500px;
+            border-left: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Matching Game</h1>
+    <p>Click on the extra smiling face on the left.</p>
+    <div id="leftSide"></div>
+    <div id="rightSide"></div>
+    <h2 id="scoreSystem"></h2>
+    <script>
+        window.addEventListener("load", generateFaces); // on loading of the page, calls the function
+        let numberOfFaces = 5;
+        let score = 0;
+        const theLeftSide = document.querySelector("#leftSide");
+        const theRightSide = document.querySelector("#rightSide");
+
+
+        function generateFaces() {
+
+            for (let i = 0; i < numberOfFaces; i++) {
+                let face = document.createElement("img"); // creates img element
+                let randomTop = Math.floor(Math.random() * 400) + 1;
+                let randomLeft = Math.floor(Math.random() * 400) + 1;
+
+                face.src = "../../images/smile.png"; // assigns src attribute
+                face.style.top = randomTop + "px"; // assigns a random value to top attribute
+                face.style.left = randomLeft + "px"; // assigns a random value to left attribute
+
+                theLeftSide.appendChild(face); // adds the img element to the HTML
+            }
+
+            let leftSideImages = theLeftSide.cloneNode(true); // clones the left side img elements
+            leftSideImages.removeChild(leftSideImages.lastElementChild); // removes the last img element
+            theRightSide.appendChild(leftSideImages); // adds the imgs to the right side
+
+            theLeftSide.lastElementChild.addEventListener("click", nextLevel); // calls nextLevel function
+
+            theLeftSide.lastElementChild.addEventListener("click", updateScore);
+
+            function updateScore() {
+                score++;
+                document.getElementById("scoreSystem").innerText = ("SCORE: " + score);
+            }
+
+            document.body.addEventListener("click", gameOver); // ends the game
+        }
+
+        function nextLevel(event) {    
+            event.stopPropagation(); // stops the event from triggering on other elements
+            numberOfFaces += 5; // increases faces generated
+            
+            while(theLeftSide.firstElementChild) { // removes all img elements on the left side
+                theLeftSide.removeChild(theLeftSide.firstElementChild);
+            }
+
+            while (theRightSide.firstElementChild) { // removes all img elements on the right side
+                theRightSide.removeChild(theRightSide.firstElementChild);
+            }
+
+            generateFaces(); // generates more faces!
+        }
+
+        function gameOver() {
+            alert("Game Over!");
+            document.body.removeEventListener("click", gameOver);
+            theLeftSide.removeEventListener("click", nextLevel);
+        }
+    </script>
+</body>
+</html>

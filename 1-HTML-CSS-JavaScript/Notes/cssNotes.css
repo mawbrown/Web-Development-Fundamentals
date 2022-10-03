@@ -1,0 +1,94 @@
+/* CSS Properties and Useful Concepts */
+
+p {
+    color: red; /* hover over the color box to pick the color */
+}
+
+/* use <span> to change the design of something without changing the format */
+
+/* CSS Box Model
+
+Margin - Outer most box
+Border
+Padding
+Content - inner most content of the element
+
+*/
+
+/* Margin
+
+margin-top
+margin-right
+margin-bottom
+margin-left
+
+margin: 10px 5px 4px auto - This is the same as the 4 lines above | it applies them in a clockwise order
+        ^This would be TOP RIGHT BOTTOM LEFT
+
+        2 values - First value is top and bottom
+                   Second value is left and right
+
+    Horizontally center by using margin: auto;
+*/
+
+/* Padding
+
+Padding is used the same way as MARGIN
+
+*/
+
+/* Border
+
+border-color
+border-style (solid, dotted, dashed, double)
+border-width
+
+border - the same as the 3 above properties
+         Order does not matter (ex. blue solid 5px)
+
+*/
+
+/* Background
+
+background-color
+background-image
+background-size
+background-position
+background-repeat
+
+background - same as the 5 properties above
+                Order does not matter
+
+*/
+
+/* Font
+
+font-style
+font-size
+font-weight
+font-family
+
+font - same as the 4 above properties
+        To use this property you must set a value for font-size and font-family. font-family must be set last.
+
+*/
+
+/* Display
+
+block - element begins on a new line CAN accept width and height
+inline - element stays on the same line CANNOT accept width and height
+inline-block - stay on the same line AND accept width and height
+none - elements set with this are not shown
+
+*/
+
+/* Color, Opacity, Width, Height, Text-align
+
+Color - changes text color
+Opacity - change opacity | .1 is 10%
+Width & Height - number and unit (ex. 10px or auto)
+text-align - left, right, center, justify
+
+*/
+
+/* LOREM IPSUM TEXT - placeholder text */
